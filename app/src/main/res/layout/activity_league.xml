@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.myralyn.swoosh.LeagueActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/desiredleaguebg" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="88dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:srcCompat="@drawable/swooshlogo" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="142dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Desired League"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="363dp"
+        android:layout_height="178dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="155dp">
+
+        <ToggleButton
+            android:id="@+id/toggleButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/swoosh_toggle"
+            android:text="MENS"
+            android:textColor="@android:color/white"
+            android:textOff="MENS"
+            android:textOn="MENS" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/swoosh_toggle"
+            android:paddingBottom="8dp"
+            android:text="Womens"
+            android:textColor="@android:color/white"
+            android:textOff="Womens"
+            android:textOn="Woments"
+            tools:background="@drawable/swoosh_button_check"
+            tools:layout_marginTop="16dp"
+            tools:paddingTop="8dp" />
+
+        <ToggleButton
+            android:id="@+id/toggleButton6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/swoosh_toggle"
+            android:text="Co-Ed"
+            android:textColor="@android:color/white"
+            android:textOff="Co-Ed"
+            android:textOn="Co-Ed"
+            tools:background="@drawable/swoosh_button_check" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/swoosh_button"
+        android:text="NEXT"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
