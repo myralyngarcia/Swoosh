@@ -1,12 +1,12 @@
-package com.example.myralyn.swoosh
+package com.example.myralyn.swoosh.Controller
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.myralyn.swoosh.R
+import com.example.myralyn.swoosh.Utilities.EXTRA_LEAGUE
 import kotlinx.android.synthetic.main.activity_league.*
-import kotlinx.android.synthetic.main.activity_welcome.*
 
 class LeagueActivity : BaseActivity() {
 
@@ -49,7 +49,7 @@ class LeagueActivity : BaseActivity() {
         //we want that user selected either women, men, coed before clicking next so we put an if statement
         if(selectedLeague != ""){
             //create an intent skillActivity and pass the destination which is the SkillAactivity class
-            val skillActivity = Intent(this,SkillActivity::class.java)
+            val skillActivity = Intent(this, SkillActivity::class.java)
             //note we have to fix EXTRA_LEAGUE unresolvale, sslect project path->new->kotlin class->name: Constants
             //then add: const val EXTRA_LEAGUE = "league"
             skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
