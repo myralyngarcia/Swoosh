@@ -4,15 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.myralyn.swoosh.Model.Player
 import com.example.myralyn.swoosh.R
-import com.example.myralyn.swoosh.Utilities.EXTRA_LEAGUE
+import com.example.myralyn.swoosh.Utilities.EXTRA_PLAYER
 import kotlinx.android.synthetic.main.activity_league.*
 
 class LeagueActivity : BaseActivity() {
 
     //2.we set a variable so the selected for now it is empty string
-    var selectedLeague = ""
-
+    var player = Player("","")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
@@ -27,32 +27,32 @@ class LeagueActivity : BaseActivity() {
         coedLeagueBtn.isChecked = false
 
         //4.when MENS button is selected we set the variable
-        selectedLeague = "mens"
+        player.league = "mens"
     }
 
     fun onWomensClicked (view: View){
         mensLeagueBtn.isChecked = false
         coedLeagueBtn.isChecked = false
-        selectedLeague = "womens"
+        player.league = "womens"
 
     }
 
     fun onCoedClicked (view: View){
         womensLeagueBtn.isChecked = false
         mensLeagueBtn.isChecked = false
-        selectedLeague = "coed"
+        player.league = "coed"
 
     }
 
     //1.)function so that when 'NEXT' button is clicked we transition to SkillActivity page
     fun leagueNextClicked (view: View){
         //we want that user selected either women, men, coed before clicking next so we put an if statement
-        if(selectedLeague != ""){
+        if(player.league != ""){
             //create an intent skillActivity and pass the destination which is the SkillAactivity class
             val skillActivity = Intent(this, SkillActivity::class.java)
             //note we have to fix EXTRA_LEAGUE unresolvale, sslect project path->new->kotlin class->name: Constants
             //then add: const val EXTRA_LEAGUE = "league"
-            skillActivity.putExtra(EXTRA_LEAGUE, selectedLeague)
+            skillActivity.putExtra(EXTRA_PLAYER,player)
             //then we start the intent
             startActivity(skillActivity)
         }
