@@ -14,10 +14,29 @@ class SkillActivity : BaseActivity() {
 
     lateinit var player: Player
 
+    //when we change orientation we save the Instance and
+    // parcel the player in the save Instance coz the Activity is destroyed
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        //do a safecall on outState coz it is null when activity is just started
+        //if not null then we parcel the player in the saved Instance which is the outState
+        outState?.putParcelable(EXTRA_PLAYER, player)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
         player = intent.getParcelableExtra(EXTRA_PLAYER)
+    }
+
+    //after we change orientation the Activity is resumed when this happens we want to pass
+    //Instance to the same actvity along with the player info.
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        //make sure savedInstanceState is not null
+        if(savedInstanceState != null){
+            player=savedInstanceState.getParcelable(EXTRA_PLAYER)
+        }
     }
 
     fun onBeginnerClicked(view: View){

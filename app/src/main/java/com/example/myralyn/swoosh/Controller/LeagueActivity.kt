@@ -2,6 +2,7 @@ package com.example.myralyn.swoosh.Controller
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.widget.Toast
 import com.example.myralyn.swoosh.Model.Player
@@ -13,6 +14,26 @@ class LeagueActivity : BaseActivity() {
 
     //2.we set a variable so the selected for now it is empty string
     var player = Player("","")
+
+    //parameter outSate is the instance we are saving when activity is destroyed
+    //we override this fun so we can save the instance of the activity.
+    override fun onSaveInstanceState(outState: Bundle?) {
+        super.onSaveInstanceState(outState)
+        //we parcel the EXTRA_PLAYER, player to the outState-instance of the activity
+        //so that when we rotate we are saying the player to the outState. note: outSate is nullable so we put a safe call
+        outState?.putParcelable(EXTRA_PLAYER, player)
+    }
+
+    //after we rotate the activity is restored so we want to override fun onRestroeInstanceState
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+        //we check if savedInstanceState is not null
+        if(savedInstanceState != null){
+            //we get the player in the parcelable using the key: EXTRA_PLAYER
+            player=savedInstanceState.getParcelable(EXTRA_PLAYER)
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_league)
