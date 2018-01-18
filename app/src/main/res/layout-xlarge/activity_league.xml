@@ -52,7 +52,7 @@
         android:id="@+id/linearLayout3"
         android:layout_width="735dp"
         android:layout_height="333dp"
-        android:layout_marginTop="160dp"
+        android:layout_marginTop="50dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageView8"
@@ -107,7 +107,6 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="32dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:background="@drawable/swoosh_toggle"
         android:fontFamily="@font/montserrat"
         android:onClick="leagueNextClicked"
@@ -117,9 +116,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </android.support.constraint.ConstraintLayout>
